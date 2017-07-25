@@ -505,7 +505,7 @@ To overcome the above mentioned limitations, we adapt the commonly used exploded
 Figure~\ref{fig:case12}~b) shows the comparison of three configurations using our proposed \ExpView.
 One of the interacting proteins is selected as a \textbf{reference protein}.
 The reference proteins from all configurations are structurally aligned so that their surface representations overlap. 
-Here it is important to understand that the reference protein shown in the figure (the biggest one) actually represents three overlapping aligned proteins, each coming from one configuration.
+Here it is important to understand that the reference protein shown in the figure (the biggest one) actually {\color{red} consists of (represents)} three overlapping aligned proteins, each coming from one configuration.
 The \textbf{paired proteins} from the interaction pairs are located around the reference ones, their distance is enlarged, and the corresponding contact zones are connected by colored tubes. 
 
 %To describe the principle of this technique in detail we need to introduce the following notation.
@@ -531,7 +531,7 @@ The set of paired proteins interacting with the reference proteins is positioned
 %As it is expected that the set of configurations selected in the previous stage contains more than one configuration, the proteins from $S(P_{pair})$ are overlapping significantly.
 %Therefore, by increasing the distance between the proteins from $S(P_{ref})$ and $S(P_{pair})$ using exploded views can remedy this issue.
 
-To ensure that the paired proteins in the exploded view will not collide with each other, our algorithm calculates the spatial position of paired proteins based on their bounding boxes.
+To ensure that the paired proteins in the exploded view will not collide with each other, {\color{red} (our algorithm calculates the spatial position of paired proteins based on their bounding boxes) we employ a simple iterative force-directed placement algorithm, where paired proteins repulse each other \cite{fruchterman1991graph}}.
 %For each pair of interacting proteins, the vector between $CZ(P_{ref})$ and $CZ(P_{pair})$ is computed. 
 %$P_{pair}$ is then shifted along this vector away from $P_{ref}$ by a user-defined value. 
 %This can lead to mutual collisions between the shifted $P_{pair}$ proteins.
@@ -546,9 +546,9 @@ To ensure that the paired proteins in the exploded view will not collide with ea
 %The maximal number of repetitions corresponds to the number of $P_{pair}$ proteins (i.e., the number of processed configurations).
 For each reference protein and its paired protein, the \ExpView maintains the information about their interaction.
 If several configurations are exploded at once the \ExpView contains many paired proteins arranged around the aligned reference proteins and the pairing information must be indicated.
-We display the connection between corresponding reference proteins (aligned) and paired proteins as a tube connecting the centers of their contact zones.
+We display the connection between corresponding reference proteins (aligned) and paired proteins as a {\color{red} partially transparent} tube connecting the centers of their contact zones.
 The radius of the tube is modulated -- it is smaller in the middle of the tube to reduce visual clutter.
-The opacity of the tube is modulated in screen space, depending on the distance to the tube centerline.
+{\color{red}(The opacity of the tube is modulated in screen space, depending on the distance to the tube centerline)}.
 The tube can be switched on and off as needed.
 
 Figure~\ref{fig:case12} depicts a set of three configurations before (a) and after (b) using the \ExpView.
