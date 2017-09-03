@@ -30,9 +30,9 @@
      inkscape:window-height="1017"
      id="namedview4"
      showgrid="false"
-     inkscape:zoom="1"
-     inkscape:cx="195.4992"
-     inkscape:cy="186.82485"
+     inkscape:zoom="2"
+     inkscape:cx="359.91004"
+     inkscape:cy="317.86886"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -42,13 +42,14 @@
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0"><sodipodi:guide
+     fit-margin-bottom="0"
+     borderlayer="true"><sodipodi:guide
        id="guide4197"
        orientation="0,1"
        position="185.90566,-1.0440535e-005" /></sodipodi:namedview><metadata
      id="metadata8"><rdf:RDF><cc:Work
          rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
      id="defs6"><clipPath
        id="clipPath18"
        clipPathUnits="userSpaceOnUse"><path
@@ -1380,12 +1381,12 @@
                                    style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.85557401;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
                                    id="path170"
                                    inkscape:connector-curvature="0" /></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g><rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.88455087;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:11.26127434;stroke-opacity:1"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.9901076;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:11.26127434;stroke-opacity:1"
        id="rect4362"
-       width="137.17029"
-       height="45.121193"
-       x="133.56306"
-       y="-374.31473"
+       width="172.26472"
+       height="45.015636"
+       x="133.61584"
+       y="-374.26196"
        transform="scale(1,-1)" /><text
        style="font-variant:normal;font-weight:bold;font-size:16px;font-family:Verdana;-inkscape-font-specification:Verdana-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="text214"
@@ -1399,7 +1400,7 @@
          x="139.72449"
          sodipodi:role="line"
          id="tspan218"
-         y="-335.62036">P1: L97 | M23</tspan></text>
+         y="-335.62036">P1: L97 | P2: M23</tspan></text>
 <image
        style="fill:none;stroke:none"
        id="image234"
