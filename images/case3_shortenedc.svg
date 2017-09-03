@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="67.565735mm"
-   height="140.40558mm"
-   viewBox="0 0 239.40614 497.50008"
+   width="67.565742mm"
+   height="140.40559mm"
+   viewBox="0 0 239.40617 497.50013"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -57,9 +57,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="72.741401"
-     inkscape:cy="290.77147"
+     inkscape:zoom="1.4"
+     inkscape:cx="114.00772"
+     inkscape:cy="257.35616"
      inkscape:document-units="px"
      inkscape:current-layer="g4144"
      showgrid="false"
@@ -70,16 +70,16 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:window-width="1920"
-     inkscape:window-height="1137"
-     inkscape:window-x="3832"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1">
     <sodipodi:guide
-       position="127.75669,-8.3615963e-005"
+       position="129.75674,-8.8989021e-005"
        orientation="0,1"
        id="guide5062" />
     <sodipodi:guide
-       position="-135.13551,497.50004"
+       position="-133.13548,497.50006"
        orientation="0,1"
        id="guide5064" />
   </sodipodi:namedview>
@@ -99,7 +99,7 @@
      inkscape:label="Vrstva 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-377.06706,-263.93815)">
+     transform="translate(-375.06701,-263.93814)">
     <g
        transform="matrix(1.25,0,0,-1.25,-94.383899,776.00349)"
        inkscape:label="case3_shortened"
@@ -109,7 +109,7 @@
          id="rect5066"
          width="191.52493"
          height="398.00009"
-         x="377.16077"
+         x="375.56073"
          y="-409.65228"
          transform="scale(1,-1)" />
       <text
@@ -1312,7 +1312,8 @@
            id="tspan4644"
            sodipodi:role="line"
            y="140.74673"
-           x="382.96268 391.52975 398.67111 405.8125 280.55585 290.54865">Y136G9</tspan>
+           x="382.96268 391.52975 398.67111 405.8125 280.55585 290.54865"
+           style="fill:#000000">Y136G9</tspan>
         <tspan
            id="tspan4646"
            sodipodi:role="line"
@@ -1337,7 +1338,8 @@
            id="tspan4654"
            sodipodi:role="line"
            y="111.14086"
-           x="382.96268 391.52975 398.67111 405.8125">E159</tspan>
+           x="382.96268 391.52975 398.67111 405.8125"
+           style="fill:#000000">E159</tspan>
         <tspan
            id="tspan4656"
            sodipodi:role="line"
@@ -1377,7 +1379,8 @@
            id="tspan4670"
            sodipodi:role="line"
            y="35.809631"
-           x="383.34799 391.1958 398.33719 405.47855">L158</tspan>
+           x="383.34799 391.1958 398.33719 405.47855"
+           style="fill:#000000">L158</tspan>
         <tspan
            id="tspan4672"
            sodipodi:role="line"
@@ -1416,8 +1419,9 @@
         <tspan
            id="tspan4686"
            sodipodi:role="line"
+           x="575.98529 584.55237 591.69379 598.83514 473.57849 483.57129"
            y="147.78537"
-           x="575.98529 584.55237 591.69379 598.83514 473.57849 483.57129">Y136G9</tspan>
+           style="fill:#000000">Y136G9</tspan>
         <tspan
            id="tspan4688"
            sodipodi:role="line"
@@ -1447,17 +1451,20 @@
            id="tspan4698"
            sodipodi:role="line"
            y="100.94257"
-           x="576.34497 584.19275 591.33411 598.47552">L158</tspan>
+           x="576.34497 584.19275 591.33411 598.47552"
+           style="fill:#000000">L158</tspan>
         <tspan
            id="tspan4700"
            sodipodi:role="line"
            y="108.72615"
-           x="470.36746 479.64096 486.78235">D13</tspan>
+           x="470.36746 479.64096 486.78235"
+           style="fill:#000000">D13</tspan>
         <tspan
            id="tspan4702"
            sodipodi:role="line"
            y="116.44552"
-           x="575.98529 584.55237 591.69379 598.83514">E159</tspan>
+           x="575.98529 584.55237 591.69379 598.83514"
+           style="fill:#000000">E159</tspan>
         <tspan
            id="tspan4704"
            sodipodi:role="line"
