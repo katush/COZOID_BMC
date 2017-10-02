@@ -498,14 +498,14 @@ Selected configurations can be further processed by the following visualization 
 \section{Exploded View}
 The proteomics experts are already familiar with the manipulation of molecules in a three-dimensional environment, thus 3D space has to be an integral part of the workflow.
 Moreover, the three-dimensional space helps to find answers for questions Q3-Q5, which are related to the appearance of the contact zone of selected configurations.
-Exploring and comparing many structures in 3D at once suffer from problems like high overlaps, occlusion, and visual clutter (Figure~\ref{fig:case12}a). 
+Exploring and comparing many structures in 3D at once suffer from problems like high overlaps, occlusion, and visual clutter (Figure~\ref{fig:case12}b). 
 Traditionally used spatial representations are not sufficient.
 To overcome the above mentioned limitations, we adapt the commonly used exploded-view technique, so as to enlarge the distance between the interacting proteins. 
-Figure~\ref{fig:case12}b shows the comparison of three configurations using our proposed \ExpView.
+Figure~\ref{fig:case12}c shows the comparison of three configurations using our proposed \ExpView.
 One of the interacting proteins is selected as a \textbf{reference protein}.
 The reference proteins from all configurations are structurally aligned so that their 3D spatial representations overlap. 
-Here it is important to understand that the reference protein shown in the Figure~\ref{fig:case12} (the biggest one) actually represents three overlapping aligned reference proteins, each coming from one configuration.
-The \textbf{paired proteins} from the interaction pairs are located around the reference ones, their distance is enlarged, and the corresponding contact zones are connected by colored tubes. 
+Here it is important to understand that the reference protein shown in the Figure~\ref{fig:case12} (the brown one) actually represents three overlapping aligned reference proteins, each coming from one configuration.
+The \textbf{paired proteins} from the interaction pairs are located around the reference ones with enlarged distance.
 
 %To describe the principle of this technique in detail we need to introduce the following notation.
 %Lets assume that a configuration $CONF_i(C(P_1,P_2))$ contains a contact zone $CZ(P_1,P_2)$ of the complex $C(P_1,P_2)$.
@@ -548,8 +548,10 @@ If several configurations are exploded at once, the \ExpView contains many paire
 We display the connection between corresponding reference proteins (aligned) and paired proteins as a partially transparent tube connecting the centers of their contact zones.
 The radius of the tube is modulated -- it is smaller in the middle of the tube to reduce visual clutter.
 The tube can be switched on and on demand.
+The pairing information is also encoded by color -- for each configuration a different color is selected.
+If the contact zones contain colliding amino acids (i.e., their mutual distance is less than 3~\AA), the residues are indicated by red color.
 
-Figure~\ref{fig:case12} depicts a set of three configurations before (a) and after (b) applying the \ExpView.
+Figure~\ref{fig:case12} depicts a set of three configurations before (a, b) and after (c) applying the \ExpView.
 The Exploded view removes the problem of overlapping paired proteins.
 It also helps to see the shape and position of the contact zones.
 However, this solution does not solve the problem that the contact zones still face each other so the user has to adjust the camera to observe the contact zones of the reference and paired proteins from a perpendicular viewing direction. 
@@ -952,7 +954,7 @@ This work was supported through grants from the Vienna Science and Technology Fu
     \centering
     \includegraphics[width=\columnwidth]{images/figure5.pdf}
     \caption{\csentence{Exploded view.}
-    (a) Three aligned configurations represented by surfaces with highlighted contact zones. It is obvious that such a representation is insufficient for the observation and comparison of the contact zones. (b) \ExpView of these configurations. In both views, a different color is used for each configuration. Red spots in the contact zones signify amino acids in collision, i.e., in the mutual distance less than 3~\AA.}
+    (a) Three configurations represented by surfaces with highlighted contact zones. (b) Aligned configurations. Their contact zones are almost completely occluded. (c) \ExpView of these configurations. A different color is used for each configuration. Red spots in the contact zones signify amino acids in collision, i.e., in the mutual distance less than 3~\AA.}
 	\label{fig:case12}
 \end{figure}
 
@@ -966,7 +968,7 @@ This work was supported through grants from the Vienna Science and Technology Fu
 \begin{figure}[h!]
     \centering
   \includegraphics[width=\columnwidth]{images/figure7.pdf}
-    \caption{\csentence{\CoZoListView.} \CoZoListView showing the comparison of one configuration, the primary one (a), with another selected configuration (b). For better comparison of configurations, the corresponding amino acids are interactively highlighted using zooming. The view is sorted (and colored) according to hydrophobicity of the amino acids in the $P_1$ protein.}
+    \caption{\csentence{\CoZoListView.} \CoZoListView showing the comparison of one configuration, the primary one (a), with another selected configuration (b). For better comparison of configurations, the corresponding amino acids are interactively highlighted using zooming. The view is sorted (and colored) according to hydrophobicity of the amino acids in the $P_1$ protein. Red color indicates the matches between contact zone amino acids of primary and compared configuration. White rectangles indicate amino acids that are present in primary configuration but are missing in the compared one.}
   \label{fig:list}
 \end{figure}
 
