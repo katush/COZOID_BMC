@@ -319,6 +319,7 @@ As a representative of these attempts, Malhotra et al.~\cite{Malhotra2015} prese
 Their idea is based on building a scoring scheme considering several interface parameters, such as surface area, hydrophobicity, spatial clustering, etc.
 This helps the user to reduce the number of configurations to a smaller set, which still has to be explored manually.
 For this exploration, a visual support is essential, as it enables us to see the spatial orientation of the contact zones and to compare different configurations.
+However, DockScore provides only a rudimentary visual representation of top five configuration, which is insufficient for proper exploration of configuration space.
  
 The issue of visually representing PPIs can be tackled from different perspectives.
 One group of existing solutions focuses on the visualization of the entire networks of interacting proteins.
@@ -413,6 +414,7 @@ In the following chapters we introduce our proposed views in detail.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Matrix View}
+\label{sec:matview}
 When using a computational tool for generating possible configurations, the resulting set $S = \{CONF_i(C(P_1,P_2)); 1 \leq i \leq n\}$ can be very large, where $n$ ranges from dozens to hundreds. 
 This requires some preliminary filtering.
 This filtering stage is based on answering question Q1.
@@ -444,12 +446,22 @@ Of course, for large proteins the cells of the matrix can become too small.
 In such situations, the users can employ table lens techniques introduced by Rao and Card~\cite{Rao1994} that can be applied to both rows and columns of the matrix (see Figure~\ref{fig:matrixlens}).
 
 In order to provide the users with more detailed information about individual configurations, the \MatView contains an additional side view, which is positioned directly next to the matrix (see Figure~\ref{fig:matrixlens}b).
-This helps to answer questions Q2 and Q3 as it enables the iterative search through the list of configurations and exploration of all pairs of interacting amino acids for each configuration.
-As visual representation, the list is displayed as a scrollable wheel.
-The user can scroll the view with the mouse wheel and explore individual configurations.
-The central part consists of rectangles representing individual configurations of a subset of $S$.
-The rectangle in the middle, corresponding to the configuration in focus, gets the largest screen space.
+The user can select a primary configuration to which all the remaining configurations are compared.
+An example of such a primary configuration can be a reference crystal structure downloaded from the PDB database.
+We propose the following \textbf{ranking score}, which indicates the similarity between the contact zone of a given configuration and the primary configuration.
+The score is computed in the following way.
+One of the interacting proteins, e.g., $P_1$ , is selected as a \textbf{reference protein}, while the second protein, e.g., $P_2$, is marked as the \textbf{paired protein}.
+For each match of an amino acid in the contact zone of the reference protein between compared and primary configuration, the similarity score is increased by one.
+For each matching pair of interacting amino acids between reference and paired protein in the contact zones of compared and primary configuration, the similarity score is increased by four.
+For each missing pair of interacting amino acids between reference and paired protein in the contact zones of compared and primary configuration, the similarity score is decreased by one.
+This score was determined experimentally by the proteomic experts while designing and testing the view. 
+The central part of the side view consists of a scrollable list of individual configurations of a subset of $S$ that was filtered via \MatView.
+The configurations are ordered according to the similarity score from the most similar to the least similar ones.
+The primary configuration is always displayed as first one on the top of the list.
 The vertical list of amino acids is the same list as that one on the horizontal axis of the \MatView.
+
+The side view also helps to answer questions Q2 and Q3 as it enables the iterative search through the list of configurations and exploration of all pairs of interacting amino acids for each configuration.
+The user can select a configuration in focus by clicking. 
 By default, each configuration in focus contains one polyline connecting those two amino acids from the contact zone which are the closest ones among all the possible pairs.
 The user can hover the mouse over the lists of amino acids on the left and right side and the corresponding connection lines for a given amino acid appear.
 By clicking on the rectangle representing a given amino acid, the connection lines remain in the view. 
@@ -502,10 +514,9 @@ Exploring and comparing many structures in 3D at once suffer from problems like 
 Traditionally used spatial representations are not sufficient.
 To overcome the above mentioned limitations, we adapt the commonly used exploded-view technique, so as to enlarge the distance between the interacting proteins. 
 Figure~\ref{fig:case12}c shows the comparison of three configurations using our proposed \ExpView.
-One of the interacting proteins is selected as a \textbf{reference protein}.
 The reference proteins from all configurations are structurally aligned so that their 3D spatial representations overlap. 
 Here it is important to understand that the reference protein shown in the Figure~\ref{fig:case12} (the brown one) actually represents three overlapping aligned reference proteins, each coming from one configuration.
-The \textbf{paired proteins} from the interaction pairs are located around the reference ones with enlarged distance.
+The paired proteins from the interaction pairs are located around the reference ones with enlarged distance.
 
 %To describe the principle of this technique in detail we need to introduce the following notation.
 %Lets assume that a configuration $CONF_i(C(P_1,P_2))$ contains a contact zone $CZ(P_1,P_2)$ of the complex $C(P_1,P_2)$.
@@ -635,15 +646,8 @@ For all configurations, which should be visualized in the \CoZoListView, we find
 Then the list of amino acids present in all reference proteins of the selected configurations is created.
 Now, for each configuration, we take the interacting amino acids from paired proteins, sort them according to a selected criterion (e.g., hydrophobicity), and add them to the \CoZoListView.
 The amino acids in the left part of the \CoZoListView are always sorted in the same way for all depicted configurations.
-To enable comparison, the user can select a primary configuration to which all the remaining configurations are compared (see Figure~\ref{fig:list}b).
-An example of such a primary configuration can be a reference crystal structure downloaded from the PDB database.
-We propose the following ranking score, which indicates the similarity between the contact zone of a given configuration and the primary configuration.
-The score is computed in the following way.
-For each match of an amino acid in the contact zone of the reference protein with the selected configurations, the similarity score is increased by one.
-For each matching pair of interacting amino acids in the contact zones of the reference and paired proteins of the selected configurations the similarity score is increased by four.
-For each missing pair of interacting amino acids in the contact zones of the selected configurations the similarity score is decreased by one.
-This score was determined experimentally by the proteomic experts while designing and testing the view. 
-The \CoZoList plots the configurations ordered by this score from the most similar to the least similar ones.
+Similarly to \MatView, the user can select a primary configuration to which all the remaining configurations are compared (see Figure~\ref{fig:list}b) using the ranking score algorithm described in section~\ref{sec:matview}.
+The \CoZoList plots the configurations ordered by similarity score from the most similar to the least similar ones.
 The \CoZoListView of the primary configuration is always displayed as first one from the left side of the view.
 
 The user can select between the "compare" and the "compact" visualization modes of the list-view.
@@ -694,7 +698,7 @@ In our case it led to 10 clusters, each containing 4 configurations.
 All computed configurations were loaded into our visualization system, which includes all proposed visualizations.
 From these configurations, first the \MatView was computed, which contains the frequencies of all pairs of amino acids within the interaction distance within these 40 configurations.
 The matrix identified configurations containing the pairs of interacting amino acids with the interaction distances of less than 4 \AA.
-In our particular case, the leucine 97 and methionine 23 amino acids were in the contact distance in only three configurations out of the initial 40. 
+In our particular case, the leucine 97 and methionine 23 amino acids were in the contact distance in only three configurations out of the initial 40 (Figure~\ref{fig:matrixlens}). 
 The Matrix view helped to filter these immediately by simple interaction with the view. 
 The remaining 37 configurations were automatically hidden in the remaining views.
 %Of course, the configurations not fulfilling this criterion could be automatically discarded and even not integrated into the \MatView.
@@ -937,7 +941,7 @@ This work was supported through grants from the Vienna Science and Technology Fu
   \centering
   \includegraphics[width=\columnwidth]{images/figure4.pdf}
   \caption{\csentence{Matrix view for exploration and filtering of the input configurations.}
-  (a) \MatView showing the aggregated information about the presence of mutually interacting amino acids in all configurations. Horizontal and vertical axes contain the lists of amino acids in the contact zones of the interacting proteins $P_1$ and $P_2$. (b) The side view shows more detailed information about individual configurations and their interacting amino acids. The \MatView is sorted according to the frequency of occurrence of the amino acids in all configurations. Green borders of some matrix cells represent the pairs which are present in some of the configurations (selected in the side view). Selected cells can be marked with a cross. It is possible to enlarge a selected row and column.}
+  (a) \MatView showing the aggregated information about the presence of mutually interacting amino acids in all configurations. Horizontal and vertical axes contain the lists of amino acids in the contact zones of the interacting proteins $P_1$ and $P_2$. (b) The side view shows individual conformations sorted according to similarity with primary conformation. Interaction with the side view enables to gain more detailed information about the conformations and their interacting amino acids. The \MatView is sorted according to the frequency of occurrence of the amino acids in all configurations. Green borders of some matrix cells represent the pairs which are present in some of the configurations (selected in the side view). Selected cells can be marked with a cross. It is possible to enlarge a selected row and column.}
   \label{fig:matrixlens}
 \end{figure}
 
@@ -983,70 +987,70 @@ This work was supported through grants from the Vienna Science and Technology Fu
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\columnwidth]{images/figure9.pdf}
-    \caption{\csentence{Four juxtapositioned configurations.} Example of four configurations represented by juxtapositioned \CoZoListView. (a) Reference 3NW0 crystal structure, (b), (c), (d) three selected HADDOCK models. Lists are colored and sorted according to hydrophobicity of the amino acids in the reference protein in each configuration.}
+    \caption{\csentence{Surface-Surface Interaction -- best HADDOCK configurations.} Example of four configurations represented by juxtapositioned \CoZoListView. (a) Reference 3NW0 crystal structure, (b), (c), (d) three selected HADDOCK models. Lists are colored and sorted according to hydrophobicity of the amino acids in the reference protein in each configuration.}
   \label{fig:case3}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\columnwidth]{images/figure10.pdf}
-  \caption{\csentence{The \MatView of interacting amino acids in all HADDOCK models.} The \MatView indicates that the selected pair of M186 and I1030 amino acids is present in 10 out of 40 loaded models.}
+  \caption{\csentence{Coiled-Coil Interaction -- the \MatView of interacting amino acids in all HADDOCK models.} The \MatView indicates that the selected pair of M186 and I1030 amino acids is present in 10 out of 40 loaded models.}
   \label{fig:coiled_haddock_mat}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\columnwidth]{images/figure11.png}
-  \caption{\csentence{4UX3 crystal (blue) and selected configurations computed by HADDOCK (green).} The A172 amino acid (red) is highlighted in all loaded structures. The opposite orientation of 4UX3 and HADDOCK models is clearly visible.}
+  \caption{\csentence{Coiled-Coil Interaction -- 4UX3 crystal (blue) and 10 selected HADDOCK configurations (green).} The A172 amino acid (red) is highlighted in all loaded structures. The opposite orientation of 4UX3 and HADDOCK models is clearly visible.}
   \label{fig:coiled_haddock}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\columnwidth]{images/figure12.png}
-  \caption{\csentence{14 PyDock models (green) in the correct orientation with the 4UX3 crystal (blue).} This can be seen by the A172 amino acid visualized using balls and sticks (red).}
+  \caption{\csentence{Coiled-Coil Interaction -- 4UX3 crystal (blue) and 14 selected PyDock configurations (green) in the correct orientation.} This can be seen by the A172 amino acid visualized using balls and sticks (red).}
   \label{fig:selection2SMC3PyDock}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
   \includegraphics[width=\columnwidth]{images/figure13.pdf}
-    \caption{\csentence{Best fit PyDock configuration.} \CoZoList comparing the 4UX3 crystal with one best fit PyDock model with respect to the distances of amino acids.}
+    \caption{\csentence{Coiled-Coil Interaction -- best fitting PyDock configuration.} \CoZoList comparing the 4UX3 crystal with one best fit PyDock model with respect to the distances of amino acids.}
   \label{fig:coiled2}
 \end{figure}
 
 \begin{figure}[!h]
   \centering
   \includegraphics[width=\columnwidth]{images/figure14.png}
-  \caption{\csentence{Best fit PyDock configuration.} \OpBook showing the contact zone of the best fitting PyDock model (orange) and 4UX3 crystal (blue).}
+  \caption{\csentence{Coiled-Coil Interaction -- best fitting PyDock configuration.} \OpBook showing the contact zone of the best fitting PyDock model (orange) and 4UX3 crystal (blue). On top the overlapping contact zones on reference protein are shown. The bottom part of the image depicts the paired proteins.}
   \label{fig:selection_4_final_SMC3_PyDock}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\columnwidth]{images/figure15.pdf}
-    \caption{\csentence{3EUH crystal structure.}(a) 3EUH crystal structure consisting of the domain containing the pocket (grey) and the helical fragment of the second domain (blue) shown with cartoon representation. (b) The same structure shown with the \OpBook. The contact zones are colored according to the distance between the interacting amino acids and the labels of the two closest pairs are shown.}
+    \caption{\csentence{Pocket-String Interaction -- 3EUH crystal structure.}(a) 3EUH crystal structure consisting of the domain containing the pocket (grey) and the helical fragment of the second domain (blue) shown with cartoon representation. (b) The same structure shown with the \OpBook. The contact zones are colored according to the distance between the interacting amino acids and the labels of the two closest pairs are shown.}
   \label{fig:MukEF_crystal_3EUH_selected}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\columnwidth]{images/figure16.pdf}
-    \caption{\csentence{Sorting of amino acids according to distance.} \CoZoList sorted according to the distance of amino acids shows that the V200-R300 pair is one of the closest ones in the crystal as well as in all selected models.}
+    \caption{\csentence{Pocket-String Interaction -- best HADDOCK configurations.} \CoZoLists of selected HADDOCK configurations sorted according to the distance of amino acids. (a) Reference 3EUH crystal structure, (b), (c), (d) three selected HADDOCK models. The sorting shows that the V200-R300 pair is one of the closest ones in the crystal as well as in all selected models.}
   \label{fig:list_pocket_string}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\columnwidth]{images/figure17.png}
-  \caption{\csentence{Best fit HADDOCK.} The best fit HADDOCK model (orange) aligned with the crystal (blue).}
+  \caption{\csentence{Pocket-String Interaction -- best fitting HADDOCK configuration.} The best fit HADDOCK configuration (orange) aligned with the 3EUH crystal structure (blue).}
   \label{fig:MukEF_selection_3_best_pair}
 \end{figure}
 
 \begin{figure}[h!]
     \centering 
     \includegraphics[width=\columnwidth]{images/figure18.pdf}
-    \caption{\csentence{Best fit PyDock.}(a) Best 5 PyDock models with the distance parameter 4 \AA. The crystal is blue. The model, which exhibited the most similar contacts with the crystal, is orange and the remaining models are green. (b) \ExpView showing the comparison of contact zones of best the PyDock model (orange) with crystal (blue).}
+    \caption{\csentence{Pocket-String Interaction -- best fitting PyDock configurations.}(a) Best 5 PyDock configurations with the distance parameter 4 \AA aligned with the 3EUH crystal structure (blue). The configuration, which exhibited the most similar contacts with the crystal, is orange and the remaining configurations are green. (b) \ExpView showing the comparison of contact zones of the best PyDock configuration (orange) with the 3EUH crystal structure (blue).}
   \label{fig:pydock_pocket_string}
 \end{figure}
 
