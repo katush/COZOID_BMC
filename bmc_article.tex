@@ -106,7 +106,7 @@
 %%                                          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{COZOID: Contact Zone Identifier for Visual Analysis of Protein-Protein Interactions}
+\title{COZOID: COntact ZOne IDentifier for Visual Analysis of Protein-Protein Interactions}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
@@ -138,7 +138,7 @@
    email={viola@cg.tuwien.ac.at}   % email address
 ]{\inits{IV}\fnm{Ivan} \snm{Viola}}
 \author[
-   addressref={aff1},             % id's of addresses, e.g. {aff1,aff2}
+   addressref={aff4, aff5},             % id's of addresses, e.g. {aff1,aff2}
    email={jpalecek@sci.muni.cz}   % email address
 ]{\inits{JJP}\fnm{Jan J} \snm{Pale\v{c}ek}}
 \author[
@@ -156,21 +156,38 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \address[id=aff1]{%                           % unique id
-  \orgname{Masaryk University}, % university, etc
+  \orgname{Faculty of Informatics, Masaryk University}, % university, etc
  % \street{\v{Z}erot\'{i}novo n\'{a}m\v{e}st\'{i}},                     %
   %\postcode{}                                % post or zip code
   \city{Brno},                              % city
   \cny{Czech Republic}                                    % country
 }
+
+\address[id=aff4]{%                           % unique id
+  \orgname{National Centre for Biomolecular Research, Masaryk University}, % university, etc
+ % \street{\v{Z}erot\'{i}novo n\'{a}m\v{e}st\'{i}},                     %
+  %\postcode{}                                % post or zip code
+  \city{Brno},                              % city
+  \cny{Czech Republic}                                    % country
+}
+
+\address[id=aff5]{%                           % unique id
+  \orgname{Central European Institute of Technology, Masaryk University}, % university, etc
+ % \street{\v{Z}erot\'{i}novo n\'{a}m\v{e}st\'{i}},                     %
+  %\postcode{}                                % post or zip code
+  \city{Brno},                              % city
+  \cny{Czech Republic}                                    % country
+}
+
 \address[id=aff2]{%
-  \orgname{University of Bergen},
+  \orgname{Department of Informatics, University of Bergen},
   %\street{D\"{u}sternbrooker Weg 20},
   %\postcode{24105}
   \city{Bergen},
   \cny{Norway}
 }
 \address[id=aff3]{%
-  \orgname{TU Wien},
+  \orgname{Institute of Computer Graphics and Algorithms, TU Wien},
   %\street{D\"{u}sternbrooker Weg 20},
   %\postcode{24105}
   \city{Wien},
@@ -211,7 +228,7 @@
 Studying the patterns of protein-protein interactions (PPIs) is fundamental for understanding the structure and function of biological complexes. 
 The exploration of the vast space of possible mutual configurations of interacting proteins and their contact zones is very time consuming and requires the domain expert knowledge. 
 \parttitle{Results}
-In this paper we propose a novel tool contaning a set of visual abstraction techniques for a guided exploration of the PPI configuration space.
+In this paper, we propose a novel tool contaning a set of visual abstraction techniques for a guided exploration of the PPI configuration space.
 It helps the domain experts to select the most relevant configurations and explore their contact zones on different levels of detail. 
 The system integrates a set of methods following and supporting the workflow of proteomics experts. 
 The first visual abstraction method, the Matrix view, is based on customized interactive heat maps and provides the users with an overview of all possible residue-residue contacts in PPI configurations and their interactive filtering. 
@@ -304,7 +321,7 @@ Even though the computational tools usually provide the users with some score to
 Therefore, the configurations have to be processed and examined manually, which requires a proper visual support to enhance the exploration process.
 
 It is obvious that even for the comparison of two configurations, the traditional overlay representation suffers from many occlusion problems and it is hard to perceive the differences between individual solutions.
-When comparing more configurations, even without a detailed visualization of the hot spot amino acids, the problem becomes even more apparent (see Figure~\ref{fig:problem}).
+When comparing more configurations, even without a detailed visualization of the hot spot amino acids, the problem becomes even more apparent (Figure~\ref{fig:problem}).
 
 In this paper we propose a solution to these problems.
 We present a systemic tool, COZOID (COntact ZOne IDentifier), comprised of a set of methods for the visualization, comparison, and selection of numerous docking configurations.
@@ -312,8 +329,8 @@ The combination of our proposed methods eliminates the problems of the existing 
 The input PPI configurations are provided by the computational tools and our solution is designed for dealing with a large number of configurations. 
 
 \subsection*{Related Work}
-As the selection of the most biochemically relevant PPI configurations is a very challenging task, already several algorithms have been published for re-ranking of the configurations according to different criteria.
-They propose the user those configurations that should be explored in detail.
+As the selection of the most biochemically relevant PPI configurations is a very challenging task, several algorithms have already been published for re-ranking of the configurations according to different criteria.
+\color{red}{They enable selection of those configurations}\color{black}that should be explored in detail.
 As a representative of these attempts, Malhotra et al.~\cite{Malhotra2015} presented in 2015 DockScore, a webserver for ranking the individual configurations produced by the docking tools. 
 Their idea is based on building a scoring scheme considering several interface parameters, such as the surface area, hydrophobicity, spatial clustering, etc.
 This helps the user to reduce the number of configurations to a smaller set, which still has to be explored manually.
