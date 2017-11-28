@@ -833,15 +833,15 @@ The \CoZoLists of these models were then compared with the original crystal stru
 The models matching most closely to the original crystal structure, detected using the \CoZoList, were then visually explored in 3D using the \ExpView and the \OpBook.
 This step revealed that the best five models from the list are very close to the original crystal, but none of them fits precisely to the crystal structure.
 
-Here, we took the advantage of our test set-up (using the tightest contacts between the interacting amino acids) and altered the interaction distance parameter in the \MatView for the selection procedure. 
-All PyDOCK models were reevaluated with the distance parameter 4 \AA~(compared to the previous 5 \AA~default parameter). 
-As expected, fewer configurations containing the V200-R300 and Y110-R302 amino acid pairs within 4 \AA~distance were found -- the \MatView selection steps resulted in 21 and 13 models, respectively.
-However, the altered distance parameter also resulted in different ranking of the configurations in \CoZoLists.
-Figure~\ref{fig:list_3euh} shows the comparison of \CoZoLists of 3EUH crystal structures computed with 5 \AA~and 4 \AA~distance parameter respectively.
-It can be seen, that the decreased distance parameter eliminated several amino acid pairs with distance higher than 4~\AA~from the \CoZoList of the crystal structure.
-The eliminated pairs were not considered in the new \CoZoList ranking, where five models most similar to the crystal were again selected (Figure~\ref{fig:pydock_pocket_string}a). 
+Here, we took the advantage of our testing set-up (using the tightest contacts between the interacting amino acids) and altered the interaction distance parameter in the \MatView for the selection procedure. 
+All PyDOCK models were reevaluated with the distance parameter set to 4 \AA~(compared to the previous 5 \AA~default parameter settings). 
+As expected, fewer configurations containing the V200-R300 and Y110-R302 amino acid pairs were found within the 4 \AA~distance -- the \MatView selection steps resulted in 21 and 13 models, respectively.
+However, the altered distance parameter also resulted in different ranking of the configurations in the \CoZoLists.
+Figure~\ref{fig:list_3euh} shows the comparison of the \CoZoLists of the 3EUH crystal structure computed with 5 \AA~and 4 \AA~distance parameter settings, respectively.
+It can be seen, that the decreased distance parameter eliminated several amino acid pairs with the distance higher than 4~\AA~from the \CoZoList of the crystal structure.
+The eliminated pairs were not considered in the new \CoZoList ranking, where five models, the most similar to the crystal, were selected again (Figure~\ref{fig:pydock_pocket_string}a). 
 %Based on the \CoZoLists and the 3D view analysis using the \ExpView and the \OpBook, 
-Four of these five models overlapped with the five best models detected with the previous system set-up, however, a new model with closer match was identified (Figure~\ref{fig:pydock_pocket_string}b).
+Four of these five models overlapped with the five best models detected with the previous system set-up, however, a new model with a closer match was identified (Figure~\ref{fig:pydock_pocket_string}b).
 
 This test indicates the robustness of our tool at different parameter settings and its potential for the proteomic experimental use.
 Our tool can be used also for selecting an alternative input pair of interacting amino acids, which then serves as the input for the computational tools.
@@ -1075,7 +1075,7 @@ This work was supported through grants from the Vienna Science and Technology Fu
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.9\columnwidth]{images/figure18.pdf}
-  \caption{\csentence{\CoZoLists of 3EUH crystal structure computed with different distance parameters.} (a) Contacts computed with the distance parameter 5~\AA. (b) Contacts computed with the distance parameter 4~\AA. The \CoZoLists are sorted according to the distance of the amino acids.}
+  \caption{\csentence{\CoZoLists of 3EUH crystal structure computed with different distance parameter settings.} (a) Contacts computed with the distance parameter 5~\AA. (b) Contacts computed with the distance parameter 4~\AA. The \CoZoLists are sorted according to the mutual distance of the amino acids.}
   \label{fig:list_3euh}
 \end{figure}
 
