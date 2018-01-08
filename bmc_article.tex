@@ -229,7 +229,7 @@
 Studying the patterns of protein-protein interactions (PPIs) is fundamental for understanding the structure and function of protein complexes. 
 The exploration of the vast space of possible mutual configurations of interacting proteins and their contact zones is very time consuming and requires the proteomic expert knowledge.
 \parttitle{Results}
-In this paper, we propose a novel tool contaning a set of visual abstraction techniques for a guided exploration of the PPI configuration space.
+In this paper, we propose a novel tool containing a set of visual abstraction techniques for a guided exploration of the PPI configuration space.
 It helps the proteomic experts to select the most relevant configurations and explore their contact zones on different levels of detail. 
 The system integrates a set of methods following and supporting the workflow of proteomics experts. 
 The first visual abstraction method, the Matrix view, is based on customized interactive heat maps and provides the users with an overview of all possible residue-residue contacts in all PPI configurations and their interactive filtering. 
@@ -433,13 +433,13 @@ In the following chapters, we introduce our proposed views in detail.
 \label{sec:matview}
 When using a computational tool for generating possible configurations, the resulting set $S = \{CONF_i(C(P_1,P_2)); 1 \leq i \leq n\}$, $n$ can be very large, ranging from dozens to hundreds. 
 This amount is impossible to explore manually one-be-one, thus some preliminary filtering is crucial.
-The filtering stage is designed to answer the question Q1.
+The filtering stage is designed to answer question Q1.
 We propose a matrix-based visualization inspired by commonly used heat maps (Figure~\ref{fig:matrixlens}a).
 The rows and columns of the \MatView correspond to interacting proteins $P_1$ and $P_2$ respectively.
 Each row or column represents one amino acid present in a contact zone of some of the configurations $CONF_i(C(P_1,P_2))$. 
 The rows and columns are formed only by those amino acids from the interacting proteins which are in contact in at least one configuration.
 The contact between the amino acids is based on their Euclidean distance. 
-Two amino acids are considered to be in contact if their distance is between 3 and 5 \AA ngstr\"{o}ms.
+Two amino acids are considered to be in contact if their distance is between 3 and 5 \AA.
 This range can be interactively changed by the user.
 The color of each cell in the matrix corresponds to the number of occurrences of the corresponding interacting amino acids in the set $S$ of all configurations. 
 The colored lists of amino acids can be interpreted as histograms, encoding the number of their occurrences.
@@ -479,14 +479,14 @@ The primary configuration is always displayed as the first one on the top of the
 
 The side view helps to answer the questions Q2 and Q3 as it enables the iterative search through the list of configurations and the exploration of all pairs of interacting amino acids for each configuration.
 The user can select a configuration in focus by clicking on it. 
-By default, each configuration in focus contains one polyline connecting those two amino acids from the contact zone which are the closest ones among all the possible pairs (Figure~\ref{fig:matrixlens}b)).
+By default, each configuration in focus contains one polyline connecting those two amino acids from the contact zone which are the closest ones among all the possible pairs (Figure~\ref{fig:matrixlens}b).
 The user can hover the mouse over the lists of amino acids on the left and the right side and inspect the corresponding connection lines for a given amino acid.
 By clicking on the rectangle representing a given amino acid, the connection lines remain in the view. 
 The pairs of amino acids forming the configuration in focus can be highlighted in the matrix (with green border rectangles in Figure~\ref{fig:matrixlens}a).
 From the color of the matrix cells, the user can immediately estimate the number of configurations in which these pairs are present as well.
 Vice versa, by interacting with the matrix and selecting given rectangles, the side view is automatically filtered to show only those configurations that satisfy the filtering condition.
 
-The \MatView serves as the first filtration tool for selecting only those configurations, which contain a desired combination of interacting amino acids.
+The \MatView serves as the first filtration tool for selecting only those configurations that contain a desired combination of interacting amino acids.
 This filtering cannot be automated because the frequency of a given pair in configurations does not correlate with the importance of these configurations.
 The most frequent pair of interacting amino acids can be of the same interest as a pair interacting only in one configuration.
 Therefore, the insight of the proteomic expert in combination with the interaction possibilities of the \MatView proved to be a very efficient and powerful solution.
@@ -527,7 +527,7 @@ Selected configurations can be further processed by the following visualization 
 \subsection*{Exploded View}
 The proteomics experts are already familiar with the manipulation of molecules in the three-dimensional (3D) environment, thus 3D representation has to be an integral part of the workflow.
 Moreover, the 3D space helps to find answers for questions Q3-Q5, which are related to the appearance of the contact zones of selected configurations and the properties of interacting amino acids (expressed by different coloring schemes).
-Exploring and comparing many structures in 3D at once suffer from problems like high overlaps, occlusion, and visual clutter (Figure~\ref{fig:case12}b). 
+Exploring and comparing many structures in 3D at once suffers from problems like high overlaps, occlusion, and visual clutter (Figure~\ref{fig:case12}b). 
 Traditionally used spatial representations are not sufficient.
 To overcome these limitations, we adapt the exploded-view technique, in order to enlarge the distance between the interacting proteins. 
 Figure~\ref{fig:case12}c shows the comparison of three configurations using our proposed \ExpView.
@@ -589,7 +589,7 @@ This problem is solved by the proposed \OpBook, presented in the following secti
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{Open-Book View}
-The \ExpView does not allow to observe both parts of a given contact zone simultaneously.
+The \ExpView does not allow one to observe both parts of a given contact zone simultaneously.
 The proposed \OpBook is designed specifically to answer questions similar to Q5, which deals with a detailed exploration of one selected contact zone of the complex $C(P_1,P_2)$.
 This involves the presentation of the information about different properties of individual amino acids forming the contact zone and their pairing.
 
@@ -627,7 +627,7 @@ The coloring scheme used in the \MatView represents so called conservation of th
 It can be used for coloring the contact zone as well.
 The surfaces can be augmented with labels to inform the users about the type and the identifier of individual amino acids.
 
-In both, the \ExpView and the \OpBook, a protein can be represented also by other traditionally used visualization styles, such as cartoon, spheres, balls\&sticks, sticks, etc.
+In both the \ExpView and the \OpBook, a protein can be represented also by other traditionally used visualization styles, such as cartoon, spheres, balls\&sticks, sticks, etc.
 Moreover, these methods can be combined. 
 For example, the proteins can be represented by the cartoon style and the amino acids in the contact zones can be visualized using the sticks representation to see their spatial orientation.% (see Figure~\ref{fig:contact}).
 
@@ -644,7 +644,7 @@ The left part of the view contains all amino acids coming by default from the re
 However, the order of proteins in the list-view can be changed.
 The order depends on the current task, i.e., if we want to compare the constitution of contact zones of the reference or the paired protein in the given configurations.
 The view contains all possible connections (w.r.t. the distance) between the amino acids from both contact zones.
-To avoid intersections of lines representing the connections, some amino acids on the right side are repeated -- one instance for each reference protein amino acid within a user defined distance. 
+To avoid intersections of lines representing the connections, some amino acids on the right side are repeated -- one instance for each reference protein amino acid within a user-defined distance. 
 This solution was adopted because without these repetitions there would be many line intersections, which substantially decreases the readability of the representation (see Figure~/ref{fig:pdbsum}b).
 
 For each configuration, one list-view is created and all list-views are juxtapositioned so the user can see and visually compare the constitution of the contact zones of all selected configurations.
@@ -669,7 +669,7 @@ The user can select between two visualization modes -- the \textit{compare} and 
 In the \textit{compare} mode, the amino acids from the contact zone of the primary configuration that are not present in the contact zone of any other configuration, are depicted as white rectangles with labels giving the names of the missing amino acids (see Figure~\ref{fig:list}b).
 The \textit{compact} mode omits these missing amino acids to save space.
 In both modes, the matches to amino acids in the primary configuration are highlighted with red bordered rectangles and connecting lines.
-This way, the user can immediately see which amino acids are present in both, the primary configuration as well as the other configurations, and which amino acids are missing.
+This way, the user can immediately see which amino acids are present in both the primary configuration as well as the other configurations, and which amino acids are missing.
 To guide the visual comparison, we also introduce interactive highlighting and, if necessary, zooming to corresponding amino acids in different configurations.
 
 %TODO add info about the comparison with the reference configuration! Then it shows, what is missing or redundant in individual configurations.
@@ -694,7 +694,7 @@ To guide the visual comparison, we also introduce interactive highlighting and, 
 
 To demonstrate the usability of our proposed techniques, we selected representatives of three basic types of PPI patterns,  present in the SMC complexes~\cite{Palecek2015}. 
 The SMC (Structure Maintenance of Chromosome) complexes are the key players in the chromatin organization where they ensure the stability and dynamics of chromosomes. The way the subunits of these complexes interact with each other is key for their functions~\cite{Gligoris}.
-A visual representation of such an information is highly benecial as it helps to reveal the spatial relationships between the subunits in an intuitive way.
+A visual representation of such an information is highly beneficial as it helps to reveal the spatial relationships between the subunits in an intuitive way.
 %These patterns differ in the shape of the contact zones and interacting protein domains.
 The three basic PPI types are the coiled-coil interaction, the pocket-string interaction, and the surface-surface interaction~\cite{alberts02molecular}.
 In the following subsections, we demonstrate the usefulness of our proposed visualizations on these three types of interaction.
@@ -714,8 +714,8 @@ In our case, it led to 10 clusters, each containing 4 configurations.
 
 All computed configurations were loaded into our COZOID visualization system, which interactively links all proposed visualizations.
 From these configurations, first the \MatView was computed, which contains the frequencies of all pairs of amino acids within the interaction distance within these 40 configurations.
-The matrix identified configurations containing the pairs of interacting amino acids with the interaction distances smaller than 4 \AA.
-In our particular case, the leucine 97 and methionine 23 amino acids were in the contact distance in only three configurations out of the initial 40 (Figure~\ref{fig:matrixlens}). 
+The matrix identified configurations containing the pairs of interacting amino acids with interaction distances smaller than 4 \AA.
+In our particular case, the leucine 97 and methionine 23 amino acids were within this interaction distance in only three configurations out of the initial 40 (Figure~\ref{fig:matrixlens}). 
 The Matrix view helped to filter these immediately by simple interaction with the view. 
 The remaining 37 configurations were automatically hidden in the remaining views.
 %Of course, the configurations not fulfilling this criterion could be automatically discarded and even not integrated into the \MatView.
@@ -732,8 +732,7 @@ The remaining 37 configurations were automatically hidden in the remaining views
 In the next step, we switched to the \CoZoListView and compared the list of amino acids of the 3NW0 crystal structure with the lists of all three selected configurations.
 Figure~\ref{fig:case3} shows the comparison between the 3NW0 structure and three selected HADDOCK configurations.
 %The left part of all views contains the list of amino acids in the contact zone of $P_{ref}$, the right part represents $P_{pair}$.
-
-Even from the given part of the \CoZoListView, the similarities and differences between the crystal 3NW0 (in the leftmost list) and the three selected HADDOCK configurations on the level of individual amino acids are clearly visible.
+From the given part of the \CoZoListView, the similarities and differences between the crystal 3NW0 (in the leftmost list) and the three selected HADDOCK configurations on the level of individual amino acids are clearly visible.
 In addition, the pairs of the interacting amino acids identical to the 3NW0 crystal structure are highlighted (red lines in Figure~\ref{fig:case3}). 
 The left-to-right order of the modeled configurations in Figure~\ref{fig:case3} reflects their similarity to the primary crystal structure, based on the number of identical pairs of amino acids (the best model is next to the crystal).
 
@@ -805,7 +804,7 @@ Next, the selected configurations were structurally aligned in the 3D space to t
 Afterwards, we selected the first amino acid (A172) within the respective helices and visually compared their positions in the 3D view.
 In this case, it was not even necessary to use other views to see that the preselected HADDOCK configurations exhibited a wrong orientation of the aligned helices. 
 In all output models, these A172 amino acids were located on the opposite side in comparison with the primary crystal 4UX3 (see Figure~\ref{fig:coiled_haddock}). 
-The 3D view of COZOID helped to reveal this misorientation intuitively and quickly, without a detailed exploration of all HADDOCK configurations one by one.
+The 3D view of COZOID helped to reveal this misorientation intuitively and quickly, without a detailed exploration of all HADDOCK configurations one-by-one.
 
 As for the PyDock results, 28 out of 100 output PyDock models were selected using the \MatView with the interaction pair M186 and I1030 used to filter the results.
 The next visual selection (based on A172 position judgment) provided us with 14 models with correct orientation (see Figure~\ref{fig:selection2SMC3PyDock}).
@@ -860,7 +859,7 @@ The ultimate goal of such a mutation can be to strengthen the interactions in th
 
 
 \section*{Conclusions}
-In this paper, we have presented COZOID, a novel tool for the visual exploration of configurations of two interacting proteins. 
+In this paper, we have presented COZOID, a new tool for the visual exploration of configurations of two interacting proteins. 
 It introduces a set of visualization methods for the exploration and evaluation of the proteomic relevance of large sets of configurations, detected by the existing computational tools.
 Our proposed methods were designed to follow and support the workflow of the proteomic experts.
 We described the design rationale and the principles of these methods, as well as their linking and interaction possibilities. 
@@ -868,8 +867,8 @@ We described the design rationale and the principles of these methods, as well a
 %The domain experts confirmed that our proposed solution provides them with information, which was very hard or even impossible to get using the previously available methods.
 %They confirmed that using our solution, their exploration process can lead to a satisfying conclusion about the biochemical relevance of individual configurations much faster.
 We tested these methods on real datasets of the SMC complex subunits and we demonstrated their usability in three studies, covering the most common interaction types.
-Our proposed solution provides the proteomic experts with information, which was very hard or even impossible to get using the previously available methods.
-The studies confirmed that using our solution, the exploration process can lead to a satisfying conclusion about the proteomical relevance of individual configurations much faster.
+Our proposed solution provides the proteomic experts with information that was very hard or even impossible to get using the previously available methods.
+The studies confirmed that using our solution the exploration process can lead to a satisfying conclusion about the proteomical relevance of individual configurations much faster.
 The system enables iterative filtering of the configurations that do not satisfy given criteria in the individual stages of the workflow.
 
 In the future, we plan to focus on the extension of our proposed techniques to cases where the user has no a priori knowledge about the protein complex, but can feed in experimental data from, e.g., mutagenesis or crosslink analysis.
