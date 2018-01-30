@@ -446,7 +446,7 @@ The colored lists of amino acids can be interpreted as histograms, encoding the 
 The intense red color represents the pairs of amino acids that are interacting in most of the configurations.
 The \MatView serves directly for filtering out improbable solutions by the interactive user-driven selection of cells.
 The selection is performed by clicking on individual cells. 
-Moreover, the matrix allows the expert to select a combination of several pairs of amino acids.
+Moreover, the matrix allows the expert to selecSut a combination of several pairs of amino acids.
 This is useful if the user wants to further explore only those configurations that contain the interactions between, e.g., the amino acid pair $A$, $B$ and simultaneously also pair $C$, $D$. 
 
 %The rows and columns in the matrix can be also sorted according to the frequencies of the amino acids in the configurations. 
@@ -683,7 +683,7 @@ To guide the visual comparison, we also introduce interactive highlighting and, 
 %Another possible scenario is that the user finds out that some of the promising configurations were filtered out at the beginning.
 %Such configurations can then be included back into the exploration process.
 
-\section*{Results and discussion}
+\section*{Results and Discussion}
 %All presented techniques and their integration into the proposed COZOID tool were designed in a tight collaboration between the domain experts from the field of visualization and the field of functional proteomics.
 %The group consists of a senior proteomic expert, two junior researchers, and the testing was performed by eight students of proteomics.
 %Our current main research focus in proteomics is on the structure maintenance of chromosome (SMC) complexes~\cite{Palecek2015}. 
@@ -867,8 +867,10 @@ We described the design rationale and the principles of these methods, as well a
 %The domain experts confirmed that our proposed solution provides them with information, which was very hard or even impossible to get using the previously available methods.
 %They confirmed that using our solution, their exploration process can lead to a satisfying conclusion about the biochemical relevance of individual configurations much faster.
 We tested these methods on real datasets of the SMC complex subunits and we demonstrated their usability in three studies, covering the most common interaction types.
-Our proposed solution provides the proteomic experts with information that was very hard or even impossible to get using the previously available methods.
-The studies confirmed that using our solution the exploration process can lead to a satisfying conclusion about the proteomical relevance of individual configurations much faster.
+Our aim was to overcome the drawbacks of the existing methods for visual analysis and comparison of configurations, which provide the users with traditional 3D view and exploration of individual configurations one-by-one.
+Additionally, specialized techniques enabling to explore the content of the contact zone are completely missing. 
+Therefore, our proposed solution provides the proteomic experts with information that was very hard or even impossible to get using these previously available methods.
+%The studies confirmed that using our solution the exploration process can lead to a satisfying conclusion about the proteomical relevance of individual configurations much faster.
 The system enables iterative filtering of the configurations that do not satisfy given criteria in the individual stages of the workflow.
 
 In the future, we plan to focus on the extension of our proposed techniques to cases where the user has no a priori knowledge about the protein complex, but can feed in experimental data from, e.g., mutagenesis or crosslink analysis.
