@@ -560,7 +560,7 @@ The set of paired proteins interacting with the reference proteins is positioned
 %As it is expected that the set of configurations selected in the previous stage contains more than one configuration, the proteins from $S(P_{pair})$ are overlapping significantly.
 %Therefore, by increasing the distance between the proteins from $S(P_{ref})$ and $S(P_{pair})$ using exploded views can remedy this issue.
 
-To ensure that the paired proteins in the Exploded view will not collide with each other, we employ a simple iterative force-directed placement algorithm, in which the paired proteins repulse each other \cite{fruchterman1991graph}.
+To ensure that the paired proteins in the Exploded view will not collide with each other, we arrange the paired proteins into a parabolic regular grid.
 %For each pair of interacting proteins, the vector between $CZ(P_{ref})$ and $CZ(P_{pair})$ is computed. 
 %$P_{pair}$ is then shifted along this vector away from $P_{ref}$ by a user-defined value. 
 %This can lead to mutual collisions between the shifted $P_{pair}$ proteins.
@@ -902,7 +902,7 @@ Not applicable.
 Not applicable.
 
 \section*{Availability of data and materials}
-Data and materials are available upon request. \textcolor{red}{TODO add link to download}
+Data and materials are available here: http://decibel.fi.muni.cz/cozoid/
 
 \section*{Competing interests}
   The authors declare that they have no competing interests.
