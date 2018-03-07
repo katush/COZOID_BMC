@@ -776,7 +776,7 @@ We acknowledge the members of Palecek lab for their participation in the COZOID 
 \section*{Figures}
   \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.9\columnwidth]{figure1.png}
+ % \includegraphics[width=0.9\columnwidth]{figure1.png}
  \caption{\csentence{Traditionally used 3D visual representation of configurations.}
 	Typical visual representation of configurations used by the proteomic experts that suffers from substantial visual clutter. It superposes several possible configurations between two proteins and visualizes them using the cartoon model. The set of green protein instances corresponds to one of the interacting proteins, the colored components represent the second protein in different spatial configurations.}
   \label{fig:problem}
@@ -784,7 +784,7 @@ We acknowledge the members of Palecek lab for their participation in the COZOID 
 
 \begin{figure}[h!]
   \centering	
-  \includegraphics[width=0.9\columnwidth]{figure2.pdf}
+%  \includegraphics[width=0.9\columnwidth]{figure2.pdf}
   \caption{\csentence{NSE1-NSE3 complex representation in PDBsum.}
     Two abstracted visualizations of the NSE1-NSE3 complex with PDB ID 3NW0 available in the PDBsum database. (a) Overview representation showing the number of amino acids in the contact zones and the types of interactions. (b) Part of the list of interacting amino acids along with individual interactions and their strength. Images taken from the PDBsum database~\cite{pdbsum}.}
     \label{fig:pdbsum}
@@ -792,7 +792,7 @@ We acknowledge the members of Palecek lab for their participation in the COZOID 
 
 \begin{figure}[h!]
   \centering	
-  \includegraphics[width=0.9\columnwidth]{figure3.pdf}
+%  \includegraphics[width=0.9\columnwidth]{figure3.pdf}
   \caption{\csentence{Workflow overview.}
   The exploration process followed by the domain experts and our proposed supporting visualizations. (a) The \MatView represents an overview of all input configurations, obtained by one of the existing computational tools. (b) The \ExpView enables the user to explore the contact zones and their differences for a set of selected configurations. (c) The \OpBook animates the opening of a selected configuration. (d) The \CoZoListView supports the detailed comparison of the constitution of the contact zones of selected configurations.}
   \label{fig:workflow}
@@ -800,7 +800,7 @@ We acknowledge the members of Palecek lab for their participation in the COZOID 
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.9\columnwidth]{figure4.pdf}
+%  \includegraphics[width=0.9\columnwidth]{figure4.pdf}
   \caption{\csentence{Matrix view for the exploration and filtering of the input configurations.}
   (a) \MatView showing the aggregated information about the presence of mutually interacting amino acids in all configurations. Horizontal and vertical axes contain the lists of amino acids in the contact zones of the interacting proteins $P_1$ and $P_2$. (b) The side view shows individual configurations sorted according to their similarity to the primary configuration. The interaction with the side view enables to gain more detailed information about the configurations and their interacting amino acids. The central part of the side view consists of a scrollable list of individual configurations. The vertical list of amino acids (the rightmost column) is the same list as the one on the horizontal axis. The configuration in focus contains one polyline connecting those two amino acids from the contact zone which are the closest ones (red lines). The remaining interactions between amino acids are marked with black polylines. The green borders of some matrix cells represent the pairs which are present in the configuration selected in the side view. The selected cells are marked with a cross. It is possible to enlarge a selected row and column using an interactive lens.}
   \label{fig:matrixlens}
@@ -808,7 +808,7 @@ We acknowledge the members of Palecek lab for their participation in the COZOID 
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.9\columnwidth]{figure5.pdf}
+ %   \includegraphics[width=0.9\columnwidth]{figure5.pdf}
     \caption{\csentence{Exploded view.}
     (a) Three configurations represented by surfaces with highlighted contact zones. (b) Aligned configurations. Their contact zones are almost completely occluded. (c) \ExpView of these configurations. A different color is used for each contact zone.}
 	\label{fig:case12}
@@ -816,14 +816,14 @@ We acknowledge the members of Palecek lab for their participation in the COZOID 
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.9\columnwidth]{figure6.pdf}
+%  \includegraphics[width=0.9\columnwidth]{figure6.pdf}
   \caption{\csentence{\OpBook.} \OpBook enables the user to explore the contact zones between the interacting proteins simultaneously. On the left there is the reference protein and on the right there is the corresponding paired protein. The surface of the contact zones can be color-coded according to different criteria. Here the color represents the distance between the pairs of amino acids (red represents the closest ones, green the most distant ones).}
   \label{fig:book}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
-  \includegraphics[width=0.7\columnwidth]{figure7.pdf}
+ % \includegraphics[width=0.7\columnwidth]{figure7.pdf}
     \caption{\csentence{\CoZoListView.} This view shows the comparison of one configuration, the primary one (a), with another selected configuration (b). For better comparison of configurations, the corresponding amino acids are interactively highlighted by zooming in. The view is sorted (and colored) according to hydrophobicity of the amino acids in the $P_1$ protein. Red color indicates the matches between the contact zone amino acids of the primary and the compared configuration. White rectangles indicate amino acids that are present in the primary configuration but are missing in the compared one.}
   \label{fig:list}
 \end{figure}
@@ -831,84 +831,84 @@ We acknowledge the members of Palecek lab for their participation in the COZOID 
 
 \begin{figure}[h!]
     \centering
-  \includegraphics[width=0.9\columnwidth]{figure8.pdf}
+ % \includegraphics[width=0.9\columnwidth]{figure8.pdf}
     \caption{\csentence{The \CoZoListView and different properties.} Sorting of the \CoZoListView according to different properties of amino acids -- (a) hydrophobicity, (b) mutual distance, (c) frequency of occurrence of the pairs in all configurations.}
   \label{fig:sorting}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.9\columnwidth]{figure9.pdf}
+ %   \includegraphics[width=0.9\columnwidth]{figure9.pdf}
     \caption{\csentence{Surface-Surface Interaction -- best HADDOCK configurations.} Example of four configurations represented by the juxtapositioned \CoZoListView. (a) Primary 3NW0 crystal structure, (b), (c), (d) three selected best-fit HADDOCK models. The lists are colored and sorted according to the hydrophobicity of the amino acids in the reference protein in each selected configuration.}
   \label{fig:case3}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.9\columnwidth]{figure10.pdf}
+%  \includegraphics[width=0.9\columnwidth]{figure10.pdf}
   \caption{\csentence{Coiled-Coil Interaction -- the \MatView of interacting amino acids in all HADDOCK models.} The \MatView indicates that the selected pair of M186 and I1030 amino acids is present in 10 out of 40 loaded models.}
   \label{fig:coiled_haddock_mat}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.9\columnwidth]{figure11.png}
+ % \includegraphics[width=0.9\columnwidth]{figure11.png}
   \caption{\csentence{Coiled-Coil Interaction -- 4UX3 crystal (blue) and 10 selected HADDOCK configurations (green).} The first A172 amino acid (red) is highlighted in all loaded structures. The opposite orientation of 4UX3 and HADDOCK models is clearly visible.}
   \label{fig:coiled_haddock}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.9\columnwidth]{figure12.png}
+ % \includegraphics[width=0.9\columnwidth]{figure12.png}
   \caption{\csentence{Coiled-Coil Interaction -- 4UX3 crystal (blue) and 14 selected PyDock configurations (green).} In these PyDock configurations, all A172 amino acids (red balls and sticks) are positioned at the same side as in the crystal structure (blue).}
   \label{fig:selection2SMC3PyDock}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
-  \includegraphics[width=0.9\columnwidth]{figure13.pdf}
+%  \includegraphics[width=0.9\columnwidth]{figure13.pdf}
     \caption{\csentence{Coiled-Coil Interaction -- best fitting PyDock configuration.} \CoZoList comparing the 4UX3 crystal with one best fit PyDock model with respect to the distances of amino acids.}
   \label{fig:coiled2}
 \end{figure}
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=0.9\columnwidth]{figure14.png}
+ % \includegraphics[width=0.9\columnwidth]{figure14.png}
   \caption{\csentence{Coiled-Coil Interaction -- best fitting PyDock configuration.} The \ExpView showing the contact zone of the best fitting PyDock model (orange) and the 4UX3 crystal (blue). On the top, the overlapping contact zones on the reference protein are shown. The bottom part of the image depicts the paired proteins.}
   \label{fig:selection_4_final_SMC3_PyDock}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.9\columnwidth]{figure15.pdf}
+  %  \includegraphics[width=0.9\columnwidth]{figure15.pdf}
     \caption{\csentence{Pocket-String Interaction -- 3EUH crystal structure.}(a) 3EUH crystal structure consisting of the domain containing the pocket (grey) and the helical fragment of the second domain (blue), shown using the cartoon representation. (b) The same structure shown with the \OpBook. The contact zones are colored according to the distance between the interacting amino acids and the labels of the two closest pairs are shown.}
   \label{fig:MukEF_crystal_3EUH_selected}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.9\columnwidth]{figure16.pdf}
+  %  \includegraphics[width=0.9\columnwidth]{figure16.pdf}
     \caption{\csentence{Pocket-String Interaction -- best HADDOCK configurations.} \CoZoLists of the selected HADDOCK configurations sorted according to the distance of the amino acids. (a) The primary 3EUH crystal structure, (b), (c), (d) three selected HADDOCK models. The sorting shows that the V200-R300 pair is one of the closest ones in the crystal as well as in all selected models.}
   \label{fig:list_pocket_string}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.9\columnwidth]{figure17.png}
+ % \includegraphics[width=0.9\columnwidth]{figure17.png}
   \caption{\csentence{Pocket-String Interaction -- the best fitting HADDOCK configuration.} The best fit HADDOCK configuration (orange) aligned with the 3EUH crystal structure (blue).}
   \label{fig:MukEF_selection_3_best_pair}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.9\columnwidth]{figure18.pdf}
+  %\includegraphics[width=0.9\columnwidth]{figure18.pdf}
   \caption{\csentence{\CoZoLists of 3EUH crystal structure computed with different distance parameter settings.} (a) Contacts computed with the distance parameter 5~\AA. (b) Contacts computed with the distance parameter 4~\AA. The \CoZoLists are sorted according to the mutual distance of the amino acids.}
   \label{fig:list_3euh}
 \end{figure}
 
 \begin{figure}[h!]
     \centering 
-    \includegraphics[width=0.9\columnwidth]{figure19.pdf}
+   % \includegraphics[width=0.9\columnwidth]{figure19.pdf}
     \caption{\csentence{Pocket-String Interaction -- the best fitting PyDock configurations.}(a) The best 5 PyDock configurations with the distance parameter 4 \AA,  aligned with the 3EUH crystal structure (blue). The configuration, which exhibited the most similar contacts with the crystal, is orange and the remaining configurations are green. (b) The \ExpView showing the comparison of the contact zones of the best PyDock configuration (orange) with the 3EUH crystal structure (blue).}
   \label{fig:pydock_pocket_string}
 \end{figure}
